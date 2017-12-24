@@ -90,3 +90,49 @@ HIVE的数据存储
 	HIVE表对应hdfs上的文件
 	
 	表 视图
+	内部表 Table
+	
+	create table t1	
+	(
+		id int,
+		name string,
+		age int
+	);
+
+	创建表指定保存位置
+	create table t2 
+	(
+		id int,
+		name string,
+		age int
+	) 
+	location '/mytable/hive/t2';
+
+	指定列与列的分隔符 
+	create table t3
+	(
+		id int,
+		name string
+	)
+	row format delimited fields terminated by ','
+	
+	子查寻创建表
+	create table t4 
+	as 
+	select * from t2;
+	  
+	指定分隔符创建表	
+	create table t5 
+	as 
+	select * from t2;
+	row format delimited fields terminated by ','
+	
+	修改表结构
+	alter table t1 add columns(englisg int);
+	alter table t2 add columns(math int);
+	
+	删除表
+	drop table t1
+	
+	
+	
